@@ -1,13 +1,20 @@
-import { globalCss } from './theme'
+import { globalCss } from "./theme";
 
 const globalStyles = globalCss({
-    body: {
-        color: '$gray11',
-        fontFamily: '"Sora", sans-serif',
-        margin: 0,
-        overflow: 'auto',
-        padding: 0,
-    }
-})
+  html: {
+    margin: 0,
+    padding: 0,
+    overflow: "auto",
+  },
+  body: {
+    color: "$text",
+    fontFamily: "$body",
+    fontSize: "$body",
+    lineHeight: "$base",
+    margin: 0,
+    overflow: "auto",
+    padding: 0,
+  },
+});
 
-export default globalStyles
+export default globalStyles;
