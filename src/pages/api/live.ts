@@ -11,5 +11,5 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
   const IP = req.socket.remoteAddress;
   const country = await fetchCountry(IP);
 
-  return res.status(200).json({ country });
+  return res.status(200).json({ country, IP });
 }
