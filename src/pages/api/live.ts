@@ -8,7 +8,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
     return res.status(403).end();
   }
 
-  const IP = req.headers["x-forwarded-for"];
+  const IP = req.headers["x-forwarded-for"] as string;
   const country = await fetchCountry(IP);
 
   return res.status(200).json({ country, IP });
