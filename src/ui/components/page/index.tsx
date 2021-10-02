@@ -1,4 +1,4 @@
-import { useOthers, useSelf, useMyPresence } from "@liveblocks/react";
+import { useOthers, useMyPresence } from "@liveblocks/react";
 import { ReactNode } from "react";
 import Box from "../box";
 import Flag from "../flag";
