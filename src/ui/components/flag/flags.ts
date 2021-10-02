@@ -1,5 +1,6 @@
 const flags = {
-    'GLOBAL': '🌎'
+    'GLOBAL': '🌎',
+    'BR': '🇧🇷'
 }
 
 export default flags
