@@ -9,7 +9,7 @@ async function fetchCountry(ip: string) {
   const response = await fetch(endpoint, { method: "GET" });
   const data = await response.json();
 
-  return data;
+  return data?.country_code || 'GLOBAL';
 }
 
 export default fetchCountry;
