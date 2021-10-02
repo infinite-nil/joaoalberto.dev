@@ -16,9 +16,7 @@ const Flag = ({ flag, presence }: FlagProps) => {
     console.log(flag)
     console.log(flags[flag])
     return (
-        <Container style={{ left: presence?.x || 0, top: presence?.y || 0 }}>
-            {flags[flag]}
-        </Container>
+        <Container style={{ left: presence?.x || 0, top: presence?.y || 0 }} dangerouslySetInnerHTML={{ __html: flags[flag] }} />
     )
 }
 
