@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import splitbee from "@splitbee/web";
+import { LiveblocksProvider } from "@liveblocks/react";
+import { createClient } from "@liveblocks/client";
 import globalStyles from "@/ui/config/global";
+
+const client = createClient({
+  authEndpoint: "/api/live",
+});
 
 function MyApp({ Component, pageProps }) {
   globalStyles();
@@ -23,7 +29,9 @@ function MyApp({ Component, pageProps }) {
         />
         <title>João Alberto - Front-end developer</title>
       </Head>
-      <Component {...pageProps} />
+      <LiveblocksProvider client={client}>
+        <Component {...pageProps} />
+      </LiveblocksProvider>
     </>
   );
 }
