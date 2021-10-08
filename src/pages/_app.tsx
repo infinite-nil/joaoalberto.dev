@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import Head from "next/head";
+import splitbee from "@splitbee/web";
 import globalStyles from "@/ui/config/global";
 
 function MyApp({ Component, pageProps }) {
   globalStyles();
+
+  useEffect(() => {
+    splitbee.init({
+      scriptUrl: "/bee.js",
+      apiUrl: "/_hive",
+    });
+  }, []);
 
   return (
     <>
