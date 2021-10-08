@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from 'next'
 import { RoomProvider } from "@liveblocks/react";
 import Page from "@/ui/components/page";
 import Title from "@/ui/components/title";
@@ -5,28 +6,19 @@ import Text from "@/ui/components/text";
 import Box from "@/ui/components/box";
 import ExternalLink from "@/ui/components/external-link";
 
-import yearsBetween from "@/utils/years-between";
+import notion from "@/services/notion";
+import getPageTitle from "@/utils/notion/page-title";
+import getPageContent from "@/utils/notion/page-content";
+import { ONE_DAY } from "@/utils/constants"
 
-export default function Home() {
-  const experience = yearsBetween(2014, new Date().getFullYear());
-
+export default function Home({ title, content }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <RoomProvider id='home'>
-      <Page header={<Title>João Alberto, front-end developer</Title>}>
+    <RoomProvider id="home">
+      <Page header={<Title>{title}</Title>}>
         <Box kind="content">
-          <Text>
-            I am a self taught developer with over {experience} years of experience
-            developing for web, mostly in the fron-end world but I also developed
-            for back-end.
-          </Text>
-          <Text>
-            I have a strong knowledge of how web works and how to deliver amazing
-            experiences through well written code.
-          </Text>
-          <Text>
-            Now, I want to expand my horizons by investing my time learning to
-            develop for crypto, blockchains and this kind of cool stuff.
-          </Text>
+          {content.map((paragraph, id) => (
+            <Text key={id}>{paragraph}</Text>
+          ))}
         </Box>
         <Box kind="content">
           <Box kind="links-section">
@@ -42,4 +34,21 @@ export default function Home() {
       </Page>
     </RoomProvider>
   );
+}
+
+export const getStaticProps = async () => {
+  const PAGE = "aace0c6f62434facbed4462c0985a759";
+  const home = await notion.pages.retrieve({
+    page_id: PAGE,
+  });
+  const blocks = await notion.blocks.children.list({
+    block_id: PAGE,
+  });
+  const title = getPageTitle(home.properties);
+  const content = getPageContent(blocks);
+
+  return {
+    props: { title, content },
+    revalidate: ONE_DAY
+  };
 }
