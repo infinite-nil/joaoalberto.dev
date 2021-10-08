@@ -21,6 +21,7 @@ export default class Document extends NextDocument {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
+          <script async data-api="/_hive" src="/bee.js"></script>
         </Head>
         <body>
           <Main />
