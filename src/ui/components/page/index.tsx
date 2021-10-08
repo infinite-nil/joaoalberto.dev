@@ -11,9 +11,7 @@ type PageProps = {
 
 const Page = ({ children, header }: PageProps) => {
   const users = useOthers().toArray();
-  const [, updateMyPresence] = useMyPresence()
-
-  console.log(users);
+  const [, updateMyPresence] = useMyPresence();
 
   return (
     <Wrapper
@@ -29,12 +27,22 @@ const Page = ({ children, header }: PageProps) => {
         updateMyPresence({
           cursor: null,
         })
-      }>
+      }
+    >
       <Header>
         <Box kind="content">{header}</Box>
       </Header>
       <Content>{children}</Content>
-      {users.map(user => <Flag key={`user-${user.connectionId}`} flag={user.info.country} presence={{ x: user?.presence?.cursor?.x, y: user?.presence?.cursor?.y }} />)}
+      {users.map((user) => (
+        <Flag
+          key={`user-${user.connectionId}`}
+          flag={user.info.country}
+          presence={{
+            x: user?.presence?.cursor?.x,
+            y: user?.presence?.cursor?.y,
+          }}
+        />
+      ))}
     </Wrapper>
   );
 };
