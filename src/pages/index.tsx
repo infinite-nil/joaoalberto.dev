@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from 'next'
 import { RoomProvider } from "@liveblocks/react";
 import Page from "@/ui/components/page";
 import Title from "@/ui/components/title";
@@ -8,8 +9,9 @@ import ExternalLink from "@/ui/components/external-link";
 import notion from "@/services/notion";
 import getPageTitle from "@/utils/notion/page-title";
 import getPageContent from "@/utils/notion/page-content";
+import { ONE_DAY } from "@/utils/constants"
 
-export default function Home({ title, content }) {
+export default function Home({ title, content }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <RoomProvider id="home">
       <Page header={<Title>{title}</Title>}>
@@ -34,20 +36,19 @@ export default function Home({ title, content }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const PAGE = "aace0c6f62434facbed4462c0985a759";
-
   const home = await notion.pages.retrieve({
     page_id: PAGE,
   });
   const blocks = await notion.blocks.children.list({
     block_id: PAGE,
   });
-
   const title = getPageTitle(home.properties);
   const content = getPageContent(blocks);
 
   return {
     props: { title, content },
+    revalidate: ONE_DAY
   };
 }

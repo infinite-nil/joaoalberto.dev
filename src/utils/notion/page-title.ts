@@ -3,7 +3,7 @@ import { lensPath, view } from "ramda";
 
 const pageTitleLens = lensPath(["title", "title", 0, "plain_text"]);
 
-const getPageTitle = (properties: GetPageResponse["properties"]) => {
+const getPageTitle = (properties: GetPageResponse["properties"]): string => {
   return view(pageTitleLens, properties);
 };
 
