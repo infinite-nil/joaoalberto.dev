@@ -6,13 +6,10 @@ import Box from "@/ui/components/box";
 import ExternalLink from "@/ui/components/external-link";
 
 import notion from "@/services/notion";
-import yearsBetween from "@/utils/years-between";
 import getPageTitle from "@/utils/notion/page-title";
 import getPageContent from "@/utils/notion/page-content";
 
 export default function Home({ title, content }) {
-  const experience = yearsBetween(2014, new Date().getFullYear());
-
   return (
     <RoomProvider id="home">
       <Page header={<Title>{title}</Title>}>
