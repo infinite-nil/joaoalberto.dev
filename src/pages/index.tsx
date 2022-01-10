@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from 'next'
+import { InferGetStaticPropsType } from "next";
 import { RoomProvider } from "@liveblocks/react";
 import Page from "@/ui/components/page";
 import Title from "@/ui/components/title";
@@ -9,9 +9,12 @@ import ExternalLink from "@/ui/components/external-link";
 import notion from "@/services/notion";
 import getPageTitle from "@/utils/notion/page-title";
 import getPageContent from "@/utils/notion/page-content";
-import { ONE_DAY } from "@/utils/constants"
+import { ONE_DAY } from "@/utils/constants";
 
-export default function Home({ title, content }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({
+  title,
+  content,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <RoomProvider id="home">
       <Page header={<Title>{title}</Title>}>
@@ -21,7 +24,7 @@ export default function Home({ title, content }: InferGetStaticPropsType<typeof 
           ))}
         </Box>
         <Box kind="content">
-          <Box kind="links-section">
+          <Box>
             <Title as="p">Links</Title>
             <ExternalLink href="https://www.linkedin.com/in/joao-amo/">
               Linkedin
@@ -49,6 +52,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { title, content },
-    revalidate: ONE_DAY
+    revalidate: ONE_DAY,
   };
-}
+};

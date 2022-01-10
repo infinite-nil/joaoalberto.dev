@@ -23,10 +23,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content="I am João Alberto, your next front-end developer."
-        />
+        <meta name="description" content="João Alberto - Front-end developer." />
         <title>João Alberto - Front-end developer</title>
       </Head>
       <LiveblocksProvider client={client}>
