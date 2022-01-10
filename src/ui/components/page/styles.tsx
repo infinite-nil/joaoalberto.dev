@@ -5,9 +5,8 @@ const Wrapper = styled("div", {
 });
 
 const Header = styled("header", {
-  py: '100px',
-  px: '$base3x',
-  gradient: {start: "$green4", end: "$green6"},
+  py: "100px",
+  px: "$base3x",
 });
 
 const Content = styled("div", {
