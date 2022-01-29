@@ -2,10 +2,11 @@ import { useOthers, useMyPresence } from "@liveblocks/react";
 import { ReactNode } from "react";
 import Box from "../box";
 import Flag from "../flag";
+import Navbar from "../navbar";
 import { Content, Header, Wrapper } from "./styles";
 
 type PageProps = {
-  children: ReactNode;
+  children?: ReactNode;
   header?: ReactNode;
 };
 
@@ -29,6 +30,7 @@ const Page = ({ children, header }: PageProps) => {
         })
       }
     >
+      <Navbar />
       <Header>
         <Box kind="content">{header}</Box>
       </Header>

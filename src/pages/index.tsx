@@ -4,7 +4,6 @@ import Page from "@/ui/components/page";
 import Title from "@/ui/components/title";
 import Text from "@/ui/components/text";
 import Box from "@/ui/components/box";
-import ExternalLink from "@/ui/components/external-link";
 
 import notion from "@/services/notion";
 import getPageTitle from "@/utils/notion/page-title";
@@ -22,17 +21,6 @@ export default function Home({
           {content.map((paragraph, id) => (
             <Text key={id}>{paragraph}</Text>
           ))}
-        </Box>
-        <Box kind="content">
-          <Box>
-            <Title as="p">Links</Title>
-            <ExternalLink href="https://www.linkedin.com/in/joao-amo/">
-              Linkedin
-            </ExternalLink>
-            <ExternalLink href="https://github.com/infinite-nil">
-              Github
-            </ExternalLink>
-          </Box>
         </Box>
       </Page>
     </RoomProvider>

@@ -1,4 +1,4 @@
-import { green } from "@radix-ui/colors";
+import { green, mauve } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export type SPACES = "8px" | "16px" | "24px" | "32px" | string;
@@ -17,6 +17,7 @@ export const {
   theme: {
     colors: {
       ...green,
+      ...mauve,
       primary: "hsl(121, 59%, 75%)",
       primary_dark: "hsl(121, 59%, 65%)",
       text: "rgb(37, 47, 63)",
