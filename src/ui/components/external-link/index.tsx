@@ -3,7 +3,6 @@ import { styled } from "@/ui/config/theme";
 const ExternalLink = styled("a", {
   fontSize: "inherit",
   borderBottom: "1px solid $text",
-  color: "$text",
   display: "inline-block",
   textDecoration: "none",
   position: "relative",

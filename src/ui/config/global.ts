@@ -7,7 +7,6 @@ const globalStyles = globalCss({
     overflow: "auto",
   },
   body: {
-    color: "$text",
     fontFamily: "$body",
     fontSize: "$body",
     lineHeight: "$base",

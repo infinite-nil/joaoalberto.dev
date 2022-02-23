@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from "next";
 import { RoomProvider } from "@liveblocks/react";
-import Page from "@/ui/components/page";
+import Page from "@/ui/layout/page";
 import Title from "@/ui/components/title";
 import Text from "@/ui/components/text";
 import Box from "@/ui/components/box";
