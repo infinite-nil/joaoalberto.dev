@@ -14,14 +14,13 @@ export default class Document extends NextDocument {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&family=Inter:wght@500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
             rel="stylesheet"
           />
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
-          <script async data-api="/_hive" src="/bee.js"></script>
         </Head>
         <body>
           <Main />
