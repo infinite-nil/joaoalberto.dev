@@ -1,21 +1,12 @@
 import { ReactNode } from "react";
-import Box from "../../components/box";
-import { Content, Header } from "./styles";
+import Box from "@/ui/components/box";
 
 type PageProps = {
-  children: ReactNode;
-  header?: ReactNode;
+  children?: ReactNode;
 };
 
-const Page = ({ children, header }: PageProps) => {
-  return (
-    <div>
-      <Header>
-        <Box kind="content">{header}</Box>
-      </Header>
-      <Content>{children}</Content>
-    </div>
-  );
+const Page = ({ children }: PageProps) => {
+  return <Box kind="content">{children}</Box>;
 };
 
 export default Page;

@@ -1,57 +1,30 @@
-import { InferGetStaticPropsType } from "next";
-import { RoomProvider } from "@liveblocks/react";
-import Page from "@/ui/layout/page";
-import Title from "@/ui/components/title";
-import Text from "@/ui/components/text";
+import Article from "@/ui/components/article";
 import Box from "@/ui/components/box";
-import ExternalLink from "@/ui/components/external-link";
+import Text from "@/ui/components/text";
+import Title from "@/ui/components/title";
+import Page from "@/ui/layout/page";
 
-import notion from "@/services/notion";
-import getPageTitle from "@/utils/notion/page-title";
-import getPageContent from "@/utils/notion/page-content";
-import { ONE_DAY } from "@/utils/constants";
-
-export default function Home({
-  title,
-  content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
   return (
-    <RoomProvider id="home">
-      <Page header={<Title>{title}</Title>}>
-        <Box kind="content">
-          {content.map((paragraph, id) => (
-            <Text key={id}>{paragraph}</Text>
-          ))}
-        </Box>
-        <Box kind="content">
-          <Box>
-            <Title as="p">Links</Title>
-            <ExternalLink href="https://www.linkedin.com/in/joao-amo/">
-              Linkedin
-            </ExternalLink>
-            <ExternalLink href="https://github.com/infinite-nil">
-              Github
-            </ExternalLink>
-          </Box>
-        </Box>
-      </Page>
-    </RoomProvider>
+    <Page>
+      <Box style={{ marginTop: "20vh" }}>
+        <Article>
+          <Title>João Alberto.</Title>
+          <Text>
+            I am a brazilian self-taught developer with some years of experience
+            developing for web.
+          </Text>
+          <Text>
+            Mostly working on the front-end using React but also in the back-end
+            using Node.js and Ruby.
+          </Text>
+          <Text>
+            My interests are programming languages, type system and algorithms.
+            When not working for my employeer or some side project I&apos;m probably
+            reading about one of these topics.
+          </Text>
+        </Article>
+      </Box>
+    </Page>
   );
 }
-
-export const getStaticProps = async () => {
-  const PAGE = "aace0c6f62434facbed4462c0985a759";
-  const home = await notion.pages.retrieve({
-    page_id: PAGE,
-  });
-  const blocks = await notion.blocks.children.list({
-    block_id: PAGE,
-  });
-  const title = getPageTitle(home.properties);
-  const content = getPageContent(blocks);
-
-  return {
-    props: { title, content },
-    revalidate: ONE_DAY,
-  };
-};

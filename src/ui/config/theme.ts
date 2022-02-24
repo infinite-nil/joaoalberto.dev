@@ -29,12 +29,12 @@ export const {
     },
     fontSizes: {
       body: "20px",
-      heading: "38px",
-      subheading: "26px",
+      heading: "28px",
+      subheading: "24px",
     },
     fonts: {
-      heading: "Inter, sans-serif",
-      body: "'IBM Plex Serif', sans-serif",
+      heading: "'Work Sans', sans-serif",
+      body: "'Work Sans', sans-serif",
     },
     lineHeights: {
       base: 1.618,
