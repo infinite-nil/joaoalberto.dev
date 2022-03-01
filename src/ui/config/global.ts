@@ -14,6 +14,10 @@ const globalStyles = globalCss({
     overflow: "auto",
     padding: 0,
   },
+  img: {
+    maxWidth: "100%",
+    height: "auto",
+  },
 });
 
 export default globalStyles;

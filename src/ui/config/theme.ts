@@ -39,6 +39,11 @@ export const {
     lineHeights: {
       base: 1.618,
     },
+    radii: {
+      base: "4px",
+      base2x: "8px",
+      base3x: "12px",
+    }
   },
   media: {
     sm: "(min-width: 640px)",

@@ -5,6 +5,13 @@ const Title = styled("h1", {
   fontSize: "$heading",
   fontWeight: "bolder",
   margin: "2ex 0 4ex",
+  variants: {
+    size: {
+      subtitle: {
+        fontSize: "$subheading",
+      },
+    },
+  },
 });
 
 export default Title;
