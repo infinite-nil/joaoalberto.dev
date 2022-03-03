@@ -1,8 +1,6 @@
 import type { BlogPost } from "../types";
 
 const PostModel = (post): BlogPost => {
-  console.log(post);
-
   return {
     id: post?.id,
     title: post?.title || "",
