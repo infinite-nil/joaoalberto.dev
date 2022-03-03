@@ -15,7 +15,7 @@ const Wrapper = styled("div", {
 
 const ImageWrapper = styled("div", {
   borderRadius: "$base2x",
-  overflow: "clip",
+  overflow: "hidden",
   width: "100%",
   height: "160px",
 });
