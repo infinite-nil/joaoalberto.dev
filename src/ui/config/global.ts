@@ -1,6 +1,9 @@
 import { globalCss } from "./theme";
 
 const globalStyles = globalCss({
+  "*": {
+    boxSizing: "border-box",
+  },
   html: {
     margin: 0,
     padding: 0,
@@ -17,6 +20,9 @@ const globalStyles = globalCss({
   img: {
     maxWidth: "100%",
     height: "auto",
+  },
+  a: {
+    textDecoration: "none",
   },
 });
 
