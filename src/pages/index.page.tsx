@@ -14,7 +14,7 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <Page>
-      <Box style={{ marginTop: "20vh" }}>
+      <Box style={{ marginTop: "12vh" }}>
         <Article>
           <Title>João Alberto.</Title>
           <Text>
