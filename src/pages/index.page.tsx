@@ -16,17 +16,26 @@ export default function Home({
     <Page>
       <Box style={{ marginTop: "12vh" }}>
         <Article>
-          <Title>João Alberto.</Title>
+          <Title>Hey I&apos;m João Alberto.</Title>
           <Text>
-            I am a brazilian self-taught developer with some years of experience
-            developing for web.
+            I am a brazilian self-taught developer with seven years of
+            experience developing for web.
           </Text>
+          <Title as="h3" size="smalltitle">
+            What I do.
+          </Title>
           <Text>
             Mostly working on the front-end using React but also in the back-end
             using Node.js and Ruby.
           </Text>
+          <Title as="h3" size="smalltitle">
+            What I like.
+          </Title>
           <Text>
-            My interests are programming languages, type system and algorithms.
+            My interests are programming languages, types systems and algorithms
+            and web3.
+          </Text>
+          <Text>
             When not working for my employeer or some side project I&apos;m
             probably reading about one of these topics.
           </Text>

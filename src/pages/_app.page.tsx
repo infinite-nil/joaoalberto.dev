@@ -1,3 +1,4 @@
+import "inter-ui";
 import Head from "next/head";
 import globalStyles from "@/ui/config/global";
 

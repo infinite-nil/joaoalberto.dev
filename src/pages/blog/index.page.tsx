@@ -1,5 +1,4 @@
 import { GetStaticProps } from "next";
-import Link from "next/link";
 
 import Box from "@/ui/components/box";
 import Title from "@/ui/components/title";

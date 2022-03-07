@@ -10,6 +10,12 @@ const Title = styled("h1", {
       subtitle: {
         fontSize: "$subheading",
       },
+      smalltitle: {
+        fontSize: "calc($subheading - 4px)",
+        fontWeight: "bolder",
+        color: "$gray12",
+        margin: "4ex 0 2ex",
+      },
     },
   },
 });

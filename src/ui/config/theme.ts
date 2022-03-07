@@ -1,4 +1,4 @@
-import { green, gray, sageDark } from "@radix-ui/colors";
+import { gray, grass } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export type SPACES = "8px" | "16px" | "24px" | "32px" | string;
@@ -17,11 +17,10 @@ export const {
   theme: {
     colors: {
       ...gray,
-      ...green,
-      ...sageDark,
+      ...grass,
       primary: "hsl(121, 59%, 75%)",
       primary_dark: "hsl(121, 59%, 65%)",
-      text: "rgb(37, 47, 63)",
+      text: "$gray11",
     },
     space: {
       base: "8px",
@@ -30,13 +29,13 @@ export const {
       base4x: "32px",
     },
     fontSizes: {
-      body: "20px",
-      heading: "28px",
-      subheading: "24px",
+      body: "clamp(16px, 8.9vw - 1.6rem, 24px)",
+      heading: "clamp(2rem, 8.9vw - 1.6rem, 4rem)",
+      subheading: "clamp(24px, 8.9vw - 1.6rem, 28px)",
     },
     fonts: {
-      heading: "'Work Sans', sans-serif",
-      body: "'Work Sans', sans-serif",
+      heading: "'Inter', sans-serif",
+      body: "'Inter', sans-serif",
     },
     lineHeights: {
       base: 1.618,
