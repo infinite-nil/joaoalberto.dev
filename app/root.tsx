@@ -14,7 +14,10 @@ import type { MetaFunction } from "remix";
 import { Layout } from "./components/layout";
 
 export const meta: MetaFunction = () => {
-  return { title: "João Alberto - Software developer" };
+  return {
+    title: "João Alberto - Software developer",
+    "og:image": "https://joaoalberto.dev/og_image.png",
+  };
 };
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
