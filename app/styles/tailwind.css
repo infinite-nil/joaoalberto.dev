@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .gradient {
+    @apply bg-gradient-to-br;
+    @apply from-slate-100;
+    @apply to-slate-50;
+  }
+
+  .gradient-text {
+    @apply text-transparent;
+    @apply bg-clip-text;
+    @apply bg-gradient-to-br;
+    @apply from-violet-400;
+    @apply to-slate-300;
+  }
+}
