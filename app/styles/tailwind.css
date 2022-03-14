@@ -15,5 +15,6 @@
     @apply bg-gradient-to-br;
     @apply from-violet-400;
     @apply to-slate-300;
+    @apply whitespace-nowrap;
   }
 }
