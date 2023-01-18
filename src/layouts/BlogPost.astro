@@ -1,4 +1,6 @@
 ---
+import "@fontsource/inter";
+import BaseLayout from "./BaseLayout.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -24,23 +26,25 @@ const {
   </head>
 
   <body>
-    <Header />
-    <main>
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
-    </main>
-    <Footer />
+    <BaseLayout>
+      <Header />
+      <main>
+        <article>
+          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+          <h1 class="title">{title}</h1>
+          {pubDate && <time>{pubDate}</time>}
+          {
+            updatedDate && (
+              <div>
+                Last updated on <time>{updatedDate}</time>
+              </div>
+            )
+          }
+          <hr />
+          <slot />
+        </article>
+      </main>
+      <Footer />
+    </BaseLayout>
   </body>
 </html>
