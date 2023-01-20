@@ -4,16 +4,23 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
   <body>
     <div class="px-4 py-16">
-      <Header title={SITE_TITLE} />
+      <Header title={title} />
       <slot />
     </div>
   </body>
