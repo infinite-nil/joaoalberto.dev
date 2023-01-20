@@ -1,7 +1,7 @@
 ---
 import "@fontsource/inter";
 import BaseHead from "../components/BaseHead.astro";
-import NavigateBack from "../components/NavigateBack.astro";
+import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -21,8 +21,8 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
   <body class="">
-    <div class="relative px-4 py-16 md:max-w-2xl mx-auto">
-      <NavigateBack />
+    <div class="relative px-4 py-24 md:max-w-2xl mx-auto">
+      <Navbar />
       <Header title={title} />
       <slot />
     </div>

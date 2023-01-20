@@ -1,0 +1,53 @@
+---
+import ArrowLeft from "./icons/ArrowLeft.astro";
+import TextSmall from "./TextSmall.astro";
+
+const isHome = Astro.url.pathname === "/";
+---
+
+<nav
+  id="navbar"
+  class={`fixed flex top-0 p-4 w-full left-0 ${
+    isHome ? "justify-end" : "justify-between"
+  }`}
+>
+  {
+    !isHome && (
+      <div id="back-button">
+        <ArrowLeft />
+      </div>
+    )
+  }
+  <div class="flex gap-4">
+    <a href="/blog"><TextSmall>Blog</TextSmall></a>
+    <a href="https://github.com/infinite-nil" target="_blank"
+      ><TextSmall>Github</TextSmall></a
+    >
+  </div>
+</nav>
+
+<script>
+  const button = document.querySelector("#back-button");
+  const navbar = document.querySelector("#navbar");
+
+  function navigateBack() {
+    window.history.back();
+  }
+
+  function toggleNavbarShadow() {
+    const hasShadow = navbar?.classList.contains("shadow");
+    const distance = window.scrollY;
+
+    if (!hasShadow && distance >= 50) {
+      navbar?.classList.add("shadow");
+      navbar?.classList.add("backdrop-blur-md");
+    } else if (hasShadow && distance < 50) {
+      navbar?.classList.remove("shadow");
+      navbar?.classList.remove("backdrop-blur-md");
+    }
+  }
+
+  if (button) button.addEventListener("click", navigateBack);
+
+  document.addEventListener("scroll", toggleNavbarShadow);
+</script>
