@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Title from "../components/Title.astro";
+// import Title from "../components/Title.astro";
 import PostCard from "../components/PostCard.astro";
 import Text from "../components/Text.astro";
 import TextSmall from "../components/TextSmall.astro";
@@ -23,7 +23,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
     teams and improve developer experience. Passionate about contributing to
     open-source communities.
   </Text>
-  <Title classNames="mt-16 mb-8">Writing.</Title>
+  <!-- <Title classNames="mt-16 mb-8">Writing.</Title> -->
   <ul>
     {
       posts.map((post) => (
