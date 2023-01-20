@@ -1,5 +1,5 @@
 ---
-// import Title from "./Title.astro";
+import Heading from "./Heading.astro";
 import { SITE_TITLE } from "../config";
 
 export interface Props {
@@ -10,5 +10,5 @@ const { title } = Astro.props;
 ---
 
 <header>
-  <!-- <Title>{title || SITE_TITLE}</Title> -->
+  <Heading>{title || SITE_TITLE}</Heading>
 </header>
