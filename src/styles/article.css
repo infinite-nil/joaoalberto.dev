@@ -1,0 +1,27 @@
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  @apply font-medium;
+  @apply leading-6;
+  @apply text-gray-900;
+  @apply mt-8;
+  @apply mb-2;
+}
+
+.article p,
+.article ul,
+.article li {
+  @apply font-normal;
+  @apply text-base;
+  @apply tracking-[0.0012em];
+  @apply text-zinc-500;
+}
+
+.article a {
+  @apply underline;
+  @apply decoration-slice;
+  @apply underline-offset-4;
+}

@@ -1,9 +1,8 @@
 ---
 import "@fontsource/inter";
+import "../styles/article.css";
 import BaseLayout from "./BaseLayout.astro";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import TextSmall from "../components/TextSmall.astro";
 
 export interface Props {
   content: {
@@ -16,35 +15,26 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, pubDate, heroImage },
 } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <BaseLayout>
-      <Header />
-      <main>
-        <article>
-          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-          <h1 class="title">{title}</h1>
-          {pubDate && <time>{pubDate}</time>}
-          {
-            updatedDate && (
-              <div>
-                Last updated on <time>{updatedDate}</time>
-              </div>
-            )
-          }
-          <hr />
-          <slot />
-        </article>
-      </main>
-      <Footer />
-    </BaseLayout>
-  </body>
-</html>
+<BaseLayout title={title} description={description}>
+  {pubDate && <TextSmall>{pubDate}</TextSmall>}
+  <main class="mt-16">
+    <article class="article">
+      {
+        heroImage && (
+          <img
+            class="w-full h-auto my-8"
+            width={720}
+            height={360}
+            src={heroImage}
+            alt={`${title} - ${description}`}
+          />
+        )
+      }
+      <slot />
+    </article>
+  </main>
+</BaseLayout>
