@@ -1,7 +1,10 @@
 ---
+import TextSmall from "./TextSmall.astro";
+import { SITE_TITLE } from "../config";
+
 const today = new Date();
 ---
 
-<footer>
-  &copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer class="p-8 text-center">
+  <TextSmall>{SITE_TITLE}, {today.getFullYear()}</TextSmall>
 </footer>
