@@ -13,16 +13,18 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 ---
 
 <BaseLayout title="Writing">
-  <div class="mt-16">
+  <ul class="mt-16">
     {
       posts.map((post) => (
-        <PostCard
-          url={post.url}
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          date={post.frontmatter.pubDate}
-        />
+        <li>
+          <PostCard
+            url={post.url}
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            date={post.frontmatter.pubDate}
+          />
+        </li>
       ))
     }
-  </div>
+  </ul>
 </BaseLayout>
