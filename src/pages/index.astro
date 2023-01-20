@@ -1,5 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Text from "../components/Text.astro";
+import Title from "../components/Title.astro";
+
+const posts = (await Astro.glob("./blog/*.{md,mdx}"))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).valueOf() -
+      new Date(a.frontmatter.pubDate).valueOf()
+  )
+  .filter((_, i) => i < 3);
 ---
 
-<BaseLayout />
+<BaseLayout>
+  <Text classNames="mt-12">
+    I am a self-taught front-end developer with over 7 years of experience in
+    web and mobile development. Strong experience with JavaScript/TypeScript,
+    Ruby on Rails, Java/Obj-C, and Rust. Proven ability to lead development
+    teams and improve developer experience. Passionate about contributing to
+    open-source communities.
+  </Text>
+  <Title classNames="mt-16 mb-8">Writing.</Title>
+  {posts.length}
+</BaseLayout>

@@ -1,1 +1,9 @@
-<h1 class="font-medium leading-6 text-gray-900"><slot /></h1>
+---
+export interface Props {
+  class: string;
+}
+
+const { classNames = "" } = Astro.props;
+---
+
+<h1 class={`font-medium leading-6 text-gray-900 ${classNames}`}><slot /></h1>
