@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import Text from "../components/Text.astro";
+import TextSmall from "../components/TextSmall.astro";
 import Title from "../components/Title.astro";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}"))
@@ -32,4 +33,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
       />
     ))
   }
+  <a href="/blog" class="p-2">
+    <TextSmall>Read more.</TextSmall>
+  </a>
 </BaseLayout>
