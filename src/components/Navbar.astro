@@ -5,24 +5,25 @@ import TextSmall from "./TextSmall.astro";
 const isHome = Astro.url.pathname === "/";
 ---
 
-<nav
-  id="navbar"
-  class={`fixed flex top-0 p-4 w-full left-0 ${
-    isHome ? "justify-end" : "justify-between"
-  }`}
->
-  {
-    !isHome && (
-      <div id="back-button">
-        <ArrowLeft />
-      </div>
-    )
-  }
-  <div class="flex gap-4">
-    <a href="/blog"><TextSmall>Blog</TextSmall></a>
-    <a href="https://github.com/infinite-nil" target="_blank"
-      ><TextSmall>Github</TextSmall></a
-    >
+<nav id="navbar" class={`fixed w-full top-0 left-0`}>
+  <div
+    class={`w-full flex mx-auto md:max-w-2xl p-4 ${
+      isHome ? "justify-end" : "justify-between"
+    }`}
+  >
+    {
+      !isHome && (
+        <div id="back-button">
+          <ArrowLeft />
+        </div>
+      )
+    }
+    <div class="flex gap-4">
+      <a href="/blog"><TextSmall>Blog</TextSmall></a>
+      <a href="https://github.com/infinite-nil" target="_blank"
+        ><TextSmall>Github</TextSmall></a
+      >
+    </div>
   </div>
 </nav>
 
