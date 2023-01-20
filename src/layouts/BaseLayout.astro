@@ -1,6 +1,7 @@
 ---
 import "@fontsource/inter";
 import BaseHead from "../components/BaseHead.astro";
+import NavigateBack from "../components/NavigateBack.astro";
 import Header from "../components/Header.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
@@ -19,6 +20,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
   <body>
+    <NavigateBack />
     <div class="px-4 py-16">
       <Header title={title} />
       <slot />

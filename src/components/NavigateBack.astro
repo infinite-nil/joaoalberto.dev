@@ -1,0 +1,25 @@
+---
+import ArrowLeft from "./icons/ArrowLeft.astro";
+
+const isHome = Astro.url.pathname === "/";
+---
+
+<div class="fixed w-4 h-4 bg-white m-4 cursor-pointer">
+  {
+    !isHome && (
+      <div class="back-button">
+        <ArrowLeft />
+      </div>
+    )
+  }
+</div>
+
+<script>
+  const button = document.querySelector(".back-button");
+
+  function navigateBack() {
+    window.history.back();
+  }
+
+  button.addEventListener("click", navigateBack);
+</script>
