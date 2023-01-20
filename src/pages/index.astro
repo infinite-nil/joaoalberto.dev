@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
 import Text from "../components/Text.astro";
 import Title from "../components/Title.astro";
 
@@ -21,5 +22,14 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
     open-source communities.
   </Text>
   <Title classNames="mt-16 mb-8">Writing.</Title>
-  {posts.length}
+  {
+    posts.map((post) => (
+      <PostCard
+        url={post.url}
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        date={post.frontmatter.pubDate}
+      />
+    ))
+  }
 </BaseLayout>

@@ -1,0 +1,22 @@
+---
+import Text from "./Text.astro";
+import TextSmall from "./TextSmall.astro";
+import Title from "./Title.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  date: string;
+  url: string;
+}
+
+const { title, description, date, url } = Astro.props;
+---
+
+<a href={url} class="block w-full">
+  <div class="p-2 rounde mb-4 -ml-2 -mr-2 hover:bg-purple-50">
+    <Title>{title}</Title>
+    <Text>{description}</Text>
+    <TextSmall>{date}</TextSmall>
+  </div>
+</a>
