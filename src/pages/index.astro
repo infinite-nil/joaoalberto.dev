@@ -4,6 +4,7 @@ import PostCard from "../components/PostCard.astro";
 import Text from "../components/Text.astro";
 import TextSmall from "../components/TextSmall.astro";
 import Title from "../components/Title.astro";
+import ArrowRight from "../components/icons/ArrowRight.astro";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}"))
   .sort(
@@ -23,17 +24,23 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
     open-source communities.
   </Text>
   <Title classNames="mt-16 mb-8">Writing.</Title>
-  {
-    posts.map((post) => (
-      <PostCard
-        url={post.url}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        date={post.frontmatter.pubDate}
-      />
-    ))
-  }
-  <a href="/blog" class="p-2">
-    <TextSmall>Read more.</TextSmall>
-  </a>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <PostCard
+            url={post.url}
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            date={post.frontmatter.pubDate}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <div class="inline-block">
+    <a href="/blog" class="p-2 flex items-center">
+      <TextSmall>Read more</TextSmall><ArrowRight />
+    </a>
+  </div>
 </BaseLayout>
