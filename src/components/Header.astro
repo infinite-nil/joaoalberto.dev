@@ -1,12 +1,14 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+import Title from "./title.astro";
 import { SITE_TITLE } from "../config";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <header>
-  <h2>{SITE_TITLE}</h2>
-  <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-  </nav>
+  <Title>{title || SITE_TITLE}</Title>
 </header>
