@@ -20,8 +20,19 @@
   @apply text-zinc-500;
 }
 
+.article p {
+  @apply mt-2;
+  @apply mb-4;
+}
+
 .article a {
   @apply underline;
   @apply decoration-slice;
   @apply underline-offset-4;
+}
+
+.article ul {
+  @apply list-disc;
+  @apply pl-8;
+  @apply mb-4;
 }
