@@ -39,6 +39,9 @@
     }),
     (e.__SV = 1));
 })(document, window.posthog || []);
-posthog.init("phc_CtnUr611u7Vj9TPsuwlldqjrsPw2JItDrg809jQqrCO", {
-  api_host: "https://app.posthog.com",
-});
+
+if (window.location.host === "joaoalberto.dev") {
+  posthog.init("phc_CtnUr611u7Vj9TPsuwlldqjrsPw2JItDrg809jQqrCO", {
+    api_host: "https://app.posthog.com",
+  });
+}
