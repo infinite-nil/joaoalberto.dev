@@ -1,11 +1,12 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<div>
+<BaseLayout>
   <Navbar />
   <canvas id="dots" class="fixed inset-0 z-40"></canvas>
-</div>
+</BaseLayout>
 
 <script>
   const canvas = document.getElementById("dots") as HTMLCanvasElement;
