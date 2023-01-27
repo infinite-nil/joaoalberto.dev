@@ -27,8 +27,8 @@
 
 .article a {
   @apply underline;
-  @apply decoration-slice;
-  @apply underline-offset-4;
+  @apply decoration-wavy;
+  @apply underline-offset-[3px];
 }
 
 .article ul {

@@ -1,0 +1,15 @@
+---
+export interface Props extends Partial<HTMLAnchorElement> {
+  classNames?: string;
+}
+
+const { classNames = "", ...props } = Astro.props;
+---
+
+<a
+  class={`p-2 px-4 inline-block hover:bg-zinc-100 rounded-md ${classNames}`}
+  href={props.href}
+  target={props.target}
+>
+  <slot />
+</a>
