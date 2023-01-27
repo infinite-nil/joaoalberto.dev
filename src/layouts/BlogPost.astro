@@ -26,11 +26,12 @@ const {
       {
         heroImage && (
           <img
-            class="w-full h-auto my-8"
-            width={720}
-            height={360}
-            src={heroImage}
             alt={`${title} - ${description}`}
+            class="w-full h-auto my-8"
+            height={360}
+            loading="lazy"
+            src={heroImage}
+            width={720}
           />
         )
       }
