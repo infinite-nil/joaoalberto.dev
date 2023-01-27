@@ -42,10 +42,10 @@ const isHome = Astro.url.pathname === "/";
 
     if (!hasShadow && distance >= 50) {
       navbar?.classList.add("shadow");
-      navbar?.classList.add("backdrop-blur-md");
+      navbar?.classList.add("backdrop-blur-lg");
     } else if (hasShadow && distance < 50) {
       navbar?.classList.remove("shadow");
-      navbar?.classList.remove("backdrop-blur-md");
+      navbar?.classList.remove("backdrop-blur-lg");
     }
   }
 
