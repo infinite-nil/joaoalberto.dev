@@ -1,105 +1,32 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+
+export type LabProps = {
+  url: string;
+  title: string;
+  description: string;
+  pubDate: string;
+};
+
+const labs = (await Astro.glob("./lab/*.astro")) as unknown as LabProps[];
 ---
 
-<BaseLayout>
+<BaseLayout title="Some experiments with javascript">
   <Navbar />
-  <canvas id="dots" class="fixed inset-0 z-40"></canvas>
+  <ul class="mt-16">
+    {
+      labs.map((lab) => (
+        <li>
+          <PostCard
+            url={lab.url}
+            title={lab.title}
+            description={lab.description}
+            date={lab.pubDate}
+          />
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
-
-<script>
-  const canvas = document.getElementById("dots") as HTMLCanvasElement;
-  const context = canvas.getContext("2d") as CanvasRenderingContext2D;
-  const SCREEN_HEIGHT = window.innerHeight;
-  const SCREEN_WIDTH = window.innerWidth;
-  const GRID_ROWS = 30;
-  const GRID_COLS = 30;
-  const ITEM_WIDTH = SCREEN_WIDTH / GRID_COLS;
-  const ITEM_HEIGHT = SCREEN_HEIGHT / GRID_ROWS;
-  const RADIUS = 6;
-
-  let position = {
-    x: 0,
-    y: 0,
-  };
-
-  function getHoveredItem(
-    pos: typeof position,
-    x: number,
-    y: number,
-    row: number,
-    col: number
-  ) {
-    if (
-      pos.x >= x &&
-      pos.y >= y &&
-      pos.x <= x + ITEM_WIDTH &&
-      pos.y <= y + ITEM_HEIGHT
-    ) {
-      return {
-        row,
-        col,
-      };
-    }
-
-    return false;
-  }
-
-  function getCircleRadiusScale(cx: number, cy: number, pos: typeof position) {
-    const h = Math.abs(cy - pos.y) * 2;
-    const w = Math.abs(cx - pos.x) * 2;
-    const c = Math.sqrt(h + w);
-
-    if (c > 13) {
-      return 0.4;
-    }
-
-    return 1 + c / 100;
-  }
-
-  function draw() {
-    for (let row = 0; row < GRID_ROWS; row++) {
-      for (let col = 0; col < GRID_COLS; col++) {
-        const x = row * ITEM_WIDTH;
-        const y = col * ITEM_HEIGHT;
-        const cx = x + ITEM_WIDTH / 2;
-        const cy = y + ITEM_HEIGHT / 2;
-        const item = getHoveredItem(position, x, y, row, col);
-        const scale = getCircleRadiusScale(cx, cy, position);
-        const isHovered = item && item.row === row && item.col === col;
-
-        context.beginPath();
-
-        if (!isHovered) {
-          context.clearRect(x, y, x + ITEM_WIDTH, y + ITEM_HEIGHT);
-        }
-
-        context.fillStyle = "#e7e5e4";
-        context.arc(cx, cy, RADIUS * scale, 0, Math.PI * 2);
-        context.fill();
-        context.closePath();
-      }
-    }
-  }
-
-  function setup() {
-    canvas.height = SCREEN_HEIGHT;
-    canvas.width = SCREEN_WIDTH;
-    canvas.style.height = `${SCREEN_HEIGHT}px`;
-    canvas.style.width = `${SCREEN_WIDTH}px`;
-
-    draw();
-
-    canvas.addEventListener("mousemove", (event) => {
-      position = {
-        x: event.clientX,
-        y: event.clientY,
-      };
-
-      window.requestAnimationFrame(draw);
-    });
-  }
-
-  setup();
-</script>

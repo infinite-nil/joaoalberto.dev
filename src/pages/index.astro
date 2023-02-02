@@ -5,6 +5,7 @@ import PostCard from "../components/PostCard.astro";
 import Text from "../components/Text.astro";
 import TextSmall from "../components/TextSmall.astro";
 import ArrowRight from "../components/icons/ArrowRight.astro";
+import type { LabProps } from "./lab.astro";
 
 const posts = (await Astro.glob("./blog/*.{md,mdx}"))
   .sort(
@@ -13,6 +14,10 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
       new Date(a.frontmatter.pubDate).valueOf()
   )
   .filter((_, i) => i < 3);
+
+const labs = (await Astro.glob("./lab/*.astro")).filter(
+  (_, i) => i < 3
+) as unknown as LabProps[];
 ---
 
 <BaseLayout>
@@ -41,6 +46,26 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
   <div class="inline-block">
     <a href="/blog" class="p-2 flex items-center">
       <TextSmall>Read more</TextSmall><ArrowRight />
+    </a>
+  </div>
+  <Heading classNames="mt-32 mb-8">Experiments.</Heading>
+  <ul>
+    {
+      labs.map((lab) => (
+        <li>
+          <PostCard
+            url={lab.url}
+            title={lab.title}
+            description={lab.description}
+            date={lab.pubDate}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <div class="inline-block">
+    <a href="/blog" class="p-2 flex items-center">
+      <TextSmall>View more experiments</TextSmall><ArrowRight />
     </a>
   </div>
 </BaseLayout>
