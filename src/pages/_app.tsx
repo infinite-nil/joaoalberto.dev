@@ -7,7 +7,7 @@ const satoshi = localFont({ src: "./fonts/Satoshi-Variable.ttf" });
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`app-container ${satoshi.className}`}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </div>
   );
 }
