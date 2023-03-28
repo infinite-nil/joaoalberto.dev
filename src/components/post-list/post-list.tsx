@@ -16,7 +16,7 @@ function PostList({ posts }: Props) {
         <li key={post._id}>
           <Link
             href={post.url}
-            className="flex flex-col items-start bg-neutral-100 gap-4 md:items-center mb-6 p-4 rounded-xl w-[calc(100%_+_32px)] -left-4 relative md:flex-row md:bg-transparent focus:bg-neutral-100 hover:bg-neutral-100 outline-none focus:shadow-outline"
+            className="focusable flex flex-col items-start gap-4 md:items-center mb-6 p-4 rounded-xl w-[calc(100%_+_32px)] -left-4 relative md:flex-row md:bg-transparent outline-none"
           >
             <BaseText className="m-0">{post.title}</BaseText>
             <hr className="flex-1 md:block" />
