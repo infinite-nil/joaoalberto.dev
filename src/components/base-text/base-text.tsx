@@ -1,9 +1,14 @@
+import { twMerge } from "tailwind-merge";
+
 type Props = JSX.IntrinsicElements["p"] & {
   children: string;
 };
 
 function BaseText({ children, className = "", ...props }: Props) {
-  const classNames = `text-base text-justify font-medium text-stone-500 max-w-[36ch] mb-4 mt-8 md:text-left ${className}`;
+  const classNames = twMerge(
+    "text-base font-medium text-neutral-900 max-w-[36ch] mb-4 mt-8",
+    className
+  );
 
   return (
     <p className={classNames} {...props}>
