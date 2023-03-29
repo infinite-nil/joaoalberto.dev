@@ -1,8 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { Title } from "@/components/title/title";
+import { formatDate } from "@/utils/formatDate";
+import Image from "next/image";
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url);
@@ -34,23 +36,20 @@ const PostLayout = ({
       <Head>
         <title>{post.title}</title>
       </Head>
-      <article className="mx-auto max-w-2xl py-16">
-        <div className="mb-6 text-center">
-          <Link
-            className="text-center text-sm font-bold uppercase text-blue-700"
-            href="/"
-          >
-            Home
-          </Link>
-        </div>
-        <div className="mb-6 text-center">
-          <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
-          <time dateTime={post.date} className="text-sm text-slate-600">
-            {format(parseISO(post.date), "LLLL d, yyyy")}
-          </time>
-        </div>
+      <article className="col-span-6 col-start-4 max-w-2xl pt-10">
+        <Image
+          alt={`${post.title} cover photo`}
+          src={post.image}
+          width={768}
+          height={512}
+          className="rounded-xl w-full h-auto"
+        />
+        <Title>{post.title}</Title>
+        <time dateTime={post.date} className="text-sm text-slate-600">
+          {formatDate(post.date)}
+        </time>
         <div
-          className="cl-post-body"
+          className="prose"
           dangerouslySetInnerHTML={{ __html: post.body.html }}
         />
       </article>
