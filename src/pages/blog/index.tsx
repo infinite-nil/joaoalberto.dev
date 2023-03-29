@@ -2,16 +2,17 @@ import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 import { getPosts } from "@/utils/getPosts";
 import { PostList } from "@/components/post-list/post-list";
+import { Title } from "@/components/title/title";
 
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="mx-auto max-w-2xl py-16 text-center">
+    <div className="col-span-6 col-start-4 max-w-2xl pt-32">
       <Head>
-        <title>Contentlayer Blog Example</title>
+        <title>João Alberto | Writing</title>
       </Head>
-      <h1 className="mb-8 text-3xl font-bold">Contentlayer Blog Example</h1>
+      <Title>Writing</Title>
       <PostList posts={posts} />
     </div>
   );

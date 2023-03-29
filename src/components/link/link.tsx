@@ -1,6 +1,5 @@
 import NativeLink, { LinkProps } from "next/link";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
 
 import { HomeIcon } from "../icons/home";
 import { BlogIcon } from "../icons/blog";
@@ -21,10 +20,9 @@ function Link({ ...props }: Props) {
   );
 
   return (
-    <motion.a
+    <NativeLink
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
-      as={NativeLink}
       {...props}
       className={linkClassName}
     >
@@ -39,7 +37,7 @@ function Link({ ...props }: Props) {
         }
       })()}
       {props.children}
-    </motion.a>
+    </NativeLink>
   );
 }
 
