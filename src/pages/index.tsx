@@ -10,7 +10,7 @@ export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="px-8 mt mx-auto pt-28 md:max-w-4xl md:pt-60 md:grid md:grid-cols-12 md:auto-rows-fr md:gap-4 lg:max-w-7xl">
+    <>
       <main className="col-span-6 mt-8">
         <Avatar />
         <Title>João Alberto.</Title>
@@ -23,7 +23,7 @@ export default function Home({
         <Subtitle>Writing</Subtitle>
         <PostList posts={posts} />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -4,6 +4,7 @@
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 html,
@@ -13,4 +14,11 @@ body,
   margin: 0;
   overflow: auto;
   padding: 0;
+}
+
+.container {
+  @apply mx-auto;
+  @apply px-8;
+  @apply md:max-w-4xl;
+  @apply lg:max-w-7xl;
 }
