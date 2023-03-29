@@ -15,7 +15,7 @@ type Props = LinkProps & {
 function Link({ ...props }: Props) {
   const [isFocused, setIsFocused] = useState(false);
   const linkClassName = twMerge(
-    "flex gap-2 p-2 px-4 text-lg font-bold focus:text-indigo-500 hover:text-indigo-500",
+    "flex gap-2 p-2 px-4 text-lg font-bold focus:text-emerald-500 hover:text-emerald-500",
     "focusable"
   );
 
