@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next,
+.app-container {
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
