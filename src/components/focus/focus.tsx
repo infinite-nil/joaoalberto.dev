@@ -15,10 +15,13 @@ function Focus(props: Props) {
 
   useEffect(() => {
     function clearAnimations() {
-      x.set(0);
-      y.set(0);
-      w.set(0);
-      h.set(0);
+      const element = document.activeElement as HTMLElement;
+      const sizes = element.getBoundingClientRect();
+
+      animate(w, 0);
+      animate(h, 0);
+      animate(x, sizes.left + sizes.width / 2);
+      animate(y, sizes.top + sizes.height / 2);
     }
 
     function animateToElement(element: HTMLElement) {
@@ -28,6 +31,7 @@ function Focus(props: Props) {
       animate(y, sizes.top);
       animate(w, sizes.width);
       animate(h, sizes.height);
+      element.focus();
     }
 
     function handleKeyboard(event: KeyboardEvent) {
@@ -53,6 +57,8 @@ function Focus(props: Props) {
     router.events.on("routeChangeStart", clearAnimations);
 
     return () => {
+      clearAnimations();
+
       elementHandler.forEach((element) => {
         element.removeEventListener("pointerenter", handleMouse);
       });
