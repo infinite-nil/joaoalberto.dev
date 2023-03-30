@@ -5,7 +5,7 @@ import { getExperiments } from "@/utils/getExperiments";
 import { InferGetStaticPropsType } from "next";
 import { LabList } from "@/components/lab-list/lab-list";
 
-export default function Home({
+export default function Lab({
   experiments,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (

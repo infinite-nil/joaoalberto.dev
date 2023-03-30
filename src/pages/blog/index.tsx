@@ -4,7 +4,7 @@ import { getPosts } from "@/utils/getPosts";
 import { PostList } from "@/components/post-list/post-list";
 import { Title } from "@/components/title/title";
 
-export default function Home({
+export default function Blog({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
