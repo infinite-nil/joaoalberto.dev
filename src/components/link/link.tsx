@@ -16,7 +16,7 @@ type Props = LinkProps & {
 function Link({ ...props }: Props) {
   const [isFocused, setIsFocused] = useState(false);
   const linkClassName = twMerge(
-    "flex gap-2 p-2 px-4 text-lg font-bold focus:text-emerald-500 hover:text-emerald-500",
+    "text-xs flex gap-2 p-2 font-bold items-center justify-center md:text-lg focus:text-emerald-500 hover:text-emerald-500",
     "focusable"
   );
 
@@ -27,6 +27,7 @@ function Link({ ...props }: Props) {
       {...props}
       className={linkClassName}
     >
+      {props.children}
       {(() => {
         switch (props.icon) {
           case "home":
@@ -39,7 +40,6 @@ function Link({ ...props }: Props) {
             return null;
         }
       })()}
-      {props.children}
     </NativeLink>
   );
 }

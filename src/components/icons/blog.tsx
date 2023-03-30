@@ -12,6 +12,7 @@ function BlogIcon({ focused }: Props) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className="scale-75 md:scale-100"
     >
       {/* Container */}
       <motion.path
