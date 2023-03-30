@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { Focus } from "@/components/focus/focus";
 import { Navbar } from "@/components/navbar/navbar";
 
-const satoshi = localFont({ src: "./fonts/Satoshi-Variable.ttf" });
+const satoshi = localFont({ src: "../fonts/Satoshi-Variable.ttf" });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
