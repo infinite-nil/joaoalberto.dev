@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { animate, motion, useMotionValue } from "framer-motion";
 
@@ -7,6 +7,7 @@ type Props = {
 };
 
 function Focus(props: Props) {
+  const focusRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -15,13 +16,12 @@ function Focus(props: Props) {
 
   useEffect(() => {
     function clearAnimations() {
-      const element = document.activeElement as HTMLElement;
-      const sizes = element.getBoundingClientRect();
+      const sizes = focusRef.current?.getBoundingClientRect()!;
 
       animate(w, 0);
       animate(h, 0);
-      animate(x, sizes.left + sizes.width / 2);
-      animate(y, sizes.top + sizes.height / 2);
+      animate(x, sizes?.left + sizes?.width / 2);
+      animate(y, sizes?.top + sizes?.height / 2);
     }
 
     function animateToElement(element: HTMLElement) {
@@ -54,6 +54,15 @@ function Focus(props: Props) {
 
     document.addEventListener("keyup", handleKeyboard);
 
+    // Clear animations on click outside of the focusable elements
+    document.addEventListener("click", (event) => {
+      const targetElement = event.target as HTMLElement;
+
+      if (!targetElement.className.includes("focusable")) {
+        clearAnimations();
+      }
+    });
+
     router.events.on("routeChangeStart", clearAnimations);
 
     return () => {
@@ -73,6 +82,7 @@ function Focus(props: Props) {
     <>
       {props.children}
       <motion.div
+        ref={focusRef}
         className="focus bg-neutral-100 -z-[1] absolute rounded-xl"
         style={{ left: x, top: y, width: w, height: h }}
       />
