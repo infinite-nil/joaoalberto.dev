@@ -1,13 +1,18 @@
 import Head from "next/head";
-import { format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { Title } from "@/components/title/title";
 import { formatDate } from "@/utils/formatDate";
 import Image from "next/image";
+import { getResourceSlug } from "@/utils/getResourceSlug";
 
 export async function getStaticPaths() {
-  const paths = allPosts.map((post) => post.url);
+  const paths = allPosts.map((post) => ({
+    params: {
+      slug: getResourceSlug(post._raw.flattenedPath),
+    },
+  }));
+
   return {
     paths,
     fallback: false,
@@ -16,7 +21,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const post = allPosts.find(
-    (post) => post._raw.flattenedPath === params?.slug
+    (post) => getResourceSlug(post._raw.flattenedPath) === params?.slug
   );
 
   return {

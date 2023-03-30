@@ -9,6 +9,9 @@ function Navbar() {
       <Link icon="blog" href="/blog">
         Blog
       </Link>
+      <Link icon="lab" href="/lab">
+        Labs
+      </Link>
     </nav>
   );
 }

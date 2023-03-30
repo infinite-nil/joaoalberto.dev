@@ -31,6 +31,7 @@ function Focus(props: Props) {
       animate(y, sizes.top);
       animate(w, sizes.width);
       animate(h, sizes.height);
+
       element.focus();
     }
 
@@ -58,7 +59,7 @@ function Focus(props: Props) {
     document.addEventListener("click", (event) => {
       const targetElement = event.target as HTMLElement;
 
-      if (!targetElement.className.includes("focusable")) {
+      if (!targetElement.className?.includes("focusable")) {
         clearAnimations();
       }
     });
