@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Title } from "@/components/title/title";
-import { BaseText } from "@/components/base-text/base-text";
 import { getExperiments } from "@/utils/getExperiments";
 import { InferGetStaticPropsType } from "next";
 import { LabList } from "@/components/lab-list/lab-list";
