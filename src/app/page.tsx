@@ -1,4 +1,5 @@
 import { Container } from "@/ui/components/container";
+import { Link } from "@/ui/components/link";
 import { ProjectCard } from "@/ui/components/project-card";
 import { Subtitle } from "@/ui/components/subtitle";
 import { Text } from "@/ui/components/text";
@@ -79,15 +80,26 @@ export default function Home() {
     <>
       <Container containerStyles="bg-amber-50 py-16">
         <Text big>
-          I am a self-taught software engineer with over 8 years of experience.
+          I am a self-taught software engineer with over{" "}
+          <Link external decorated href="https://www.linkedin.com/in/joao-amo/">
+            8 years of experience
+          </Link>
+          .
         </Text>
         <Text big>
-          Currently I&apos;m working at Fluency Academy building real-time
-          experiences that help people to connect with language teachers.
+          Currently I&apos;m working at{" "}
+          <Link external decorated href="https://fluency.io/">
+            Fluency Academy
+          </Link>{" "}
+          building real-time experiences that help people to connect with
+          language teachers.
         </Text>
         <Text big>
-          Besides my full-time employment I also spent some time writing
-          open-source software.
+          Besides my full-time employment I also spent some time writing{" "}
+          <Link external decorated href="https://github.com/infinite-nil">
+            open-source
+          </Link>{" "}
+          software.
         </Text>
       </Container>
       <Container>
