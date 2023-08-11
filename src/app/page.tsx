@@ -78,7 +78,7 @@ export default function Home() {
 
   return (
     <>
-      <Container containerStyles="bg-amber-50 py-16">
+      <Container containerStyles="bg-[var(--container-bg)] py-16">
         <Text big>
           I am a self-taught software engineer with over{" "}
           <Link external decorated href="https://www.linkedin.com/in/joao-amo/">

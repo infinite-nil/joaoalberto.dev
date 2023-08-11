@@ -6,3 +6,124 @@ html,
 body {
   overflow-y: auto;
 }
+
+body.amber {
+  --container-bg: theme(colors.amber.50);
+  --link-text-hover: theme(colors.amber.300);
+  --link-decoration: theme(colors.amber.200);
+  --project-card-border-hover: theme(colors.amber.400);
+  --work-card-dot: theme(colors.amber.200);
+}
+
+body.sky {
+  --container-bg: theme(colors.sky.50);
+  --link-text-hover: theme(colors.sky.300);
+  --link-decoration: theme(colors.sky.200);
+  --project-card-border-hover: theme(colors.sky.400);
+  --work-card-dot: theme(colors.sky.200);
+}
+
+body.sky {
+  --container-bg: theme(colors.sky.50);
+  --link-text-hover: theme(colors.sky.300);
+  --link-decoration: theme(colors.sky.200);
+  --project-card-border-hover: theme(colors.sky.400);
+  --work-card-dot: theme(colors.sky.200);
+}
+
+body.lime {
+  --container-bg: theme(colors.lime.50);
+  --link-text-hover: theme(colors.lime.300);
+  --link-decoration: theme(colors.lime.200);
+  --project-card-border-hover: theme(colors.lime.400);
+  --work-card-dot: theme(colors.lime.200);
+}
+
+body.emerald {
+  --container-bg: theme(colors.emerald.50);
+  --link-text-hover: theme(colors.emerald.300);
+  --link-decoration: theme(colors.emerald.200);
+  --project-card-border-hover: theme(colors.emerald.400);
+  --work-card-dot: theme(colors.emerald.200);
+}
+
+body.rose {
+  --container-bg: theme(colors.rose.50);
+  --link-text-hover: theme(colors.rose.300);
+  --link-decoration: theme(colors.rose.200);
+  --project-card-border-hover: theme(colors.rose.400);
+  --work-card-dot: theme(colors.rose.200);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
