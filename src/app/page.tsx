@@ -1,5 +1,6 @@
 import { Container } from "@/ui/components/container";
 import { ProjectCard } from "@/ui/components/project-card";
+import { Subtitle } from "@/ui/components/subtitle";
 import { Text } from "@/ui/components/text";
 import { WorkCard } from "@/ui/components/work-card";
 
@@ -90,9 +91,7 @@ export default function Home() {
         </Text>
       </Container>
       <Container>
-        <h3 className="mb-4 text-sm font-bold uppercase text-neutral-400">
-          Projects
-        </h3>
+        <Subtitle>Projects</Subtitle>
         <div className="grid grid-rows-2 gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.url} {...project} />
@@ -100,9 +99,7 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <h3 className="mb-4 text-sm font-bold uppercase text-neutral-400">
-          Work
-        </h3>
+        <Subtitle>Work</Subtitle>
         <ul className="flex flex-col gap-8">
           {work.map((work) => (
             <WorkCard key={work.company} {...work} />
