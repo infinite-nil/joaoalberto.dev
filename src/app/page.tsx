@@ -52,7 +52,7 @@ export default function Home() {
       company: "Critical Mass",
       role: "Full-stack engineer",
       description:
-        "Developing high-performance applications for a social enterprise network called Dialog.ci which has more than three hundred thousand users around the globe. I've worked in a GraphQL API built in Node.js, a back office app written in Ruby on Rails, and clients wrote both in React (PWA) and React Native.",
+        "Developing high-performance applications for a social enterprise network called Dialog.ci which has more than three hundred thousand users around the globe. I&apos;ve worked in a GraphQL API built in Node.js, a back office app written in Ruby on Rails, and clients wrote both in React (PWA) and React Native.",
       start: "Oct 2017",
       end: "Nov, 2020",
     },
@@ -81,7 +81,7 @@ export default function Home() {
           I am a self-taught software engineer with over 8 years of experience.
         </Text>
         <Text big>
-          Currently I'm working at Fluency Academy building real-time
+          Currently I&apos;m working at Fluency Academy building real-time
           experiences that help people to connect with language teachers.
         </Text>
         <Text big>
