@@ -2,10 +2,10 @@
 
 import { saveTheme } from "@/app/actions";
 import { cn } from "@/lib/utils";
+import { Pallete, RotateCW } from "@/ui/icons";
 import { Colors, colors } from "@/ui/theme/colors";
 import { motion } from "framer-motion";
 import { useState, useTransition } from "react";
-import { Icon } from "../icon";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
 function ThemeSwitcher() {
@@ -34,10 +34,10 @@ function ThemeSwitcher() {
               animate={{ rotate: 360, repeatCount: 10 }}
               transition={{ duration: 1 }}
             >
-              <Icon name="rotate-cw" />
+              <RotateCW />
             </motion.div>
           ) : (
-            <Icon name="palette" />
+            <Pallete />
           )}
         </div>
       </PopoverTrigger>
