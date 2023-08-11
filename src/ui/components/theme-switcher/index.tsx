@@ -4,27 +4,41 @@ import { saveTheme } from "@/app/actions";
 import { cn } from "@/lib/utils";
 import { Colors, colors } from "@/ui/theme/colors";
 import { motion } from "framer-motion";
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 import { Icon } from "../icon";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
 function ThemeSwitcher() {
   const [_, startSave] = useTransition();
+  const [isSaving, setIsSaving] = useState(false);
 
   function handleColor(color: Colors) {
+    setIsSaving(true);
     const classes = document.body.classList.value.split(" ");
     const classToRemove = classes[classes.length - 1];
 
     document.body.classList.remove(classToRemove);
     document.body.classList.add(color);
-    startSave(() => saveTheme(color));
+    startSave(() => {
+      saveTheme(color);
+      setTimeout(() => setIsSaving(false), 800);
+    });
   }
 
   return (
     <Popover>
       <PopoverTrigger>
         <div className="h-6 w-6">
-          <Icon name="palette" />
+          {isSaving ? (
+            <motion.div
+              animate={{ rotate: 360, repeatCount: 10 }}
+              transition={{ duration: 1 }}
+            >
+              <Icon name="rotate-cw" />
+            </motion.div>
+          ) : (
+            <Icon name="palette" />
+          )}
         </div>
       </PopoverTrigger>
       <PopoverContent
