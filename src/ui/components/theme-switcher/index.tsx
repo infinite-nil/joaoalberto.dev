@@ -3,6 +3,7 @@
 import { saveTheme } from "@/app/actions";
 import { cn } from "@/lib/utils";
 import { Colors, colors } from "@/ui/theme/colors";
+import { motion } from "framer-motion";
 import { useTransition } from "react";
 import { Icon } from "../icon";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
@@ -26,18 +27,35 @@ function ThemeSwitcher() {
           <Icon name="palette" />
         </div>
       </PopoverTrigger>
-      <PopoverContent className="flex w-auto flex-col gap-2 rounded-full p-2">
-        {colors.map((color) => (
-          <button
-            onClick={() => handleColor(color.name)}
-            key={color.name}
-            type="submit"
-            className={cn(
-              "inline-block h-6 w-6 cursor-pointer rounded-full",
-              color.color
-            )}
-          />
-        ))}
+      <PopoverContent
+        asChild
+        className="flex w-auto flex-col gap-2 rounded-full p-2"
+      >
+        <motion.div>
+          {colors.map((color, index) => (
+            <motion.button
+              onClick={() => handleColor(color.name)}
+              key={color.name}
+              type="submit"
+              className={cn(
+                "inline-block h-6 w-6 cursor-pointer rounded-full",
+                color.color
+              )}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{
+                opacity: 1,
+                scale: [0.9, 1.1, 1],
+                transition: {
+                  delay: index * 0.08,
+                },
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.9,
+              }}
+            />
+          ))}
+        </motion.div>
       </PopoverContent>
     </Popover>
   );
