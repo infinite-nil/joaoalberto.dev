@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"src/**/*.+(ts|tsx|js|jsx|json|yml|yaml|md|mdx)\" --config ./.prettierrc.json"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.6",
