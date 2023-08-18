@@ -1,3 +1,4 @@
+import { allPosts } from ".contentlayer/generated";
 import { getProfileData } from "@/data/getProfileData";
 import { Container } from "@/ui/components/container";
 import { Link } from "@/ui/components/link";
@@ -9,6 +10,8 @@ import { WorkCard } from "@/ui/components/work-card";
 export default function Home() {
   const projects = getProfileData("projects");
   const work = getProfileData("experience");
+
+  console.log(allPosts);
 
   return (
     <>
