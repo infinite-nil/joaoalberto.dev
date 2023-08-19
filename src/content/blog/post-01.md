@@ -1,5 +1,5 @@
 ---
-title: My First Post
+title: Building your blog with Next.js and Contentlayer
 date: 2021-12-24
 ---
 
