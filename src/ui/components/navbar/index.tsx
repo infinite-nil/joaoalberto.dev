@@ -1,14 +1,22 @@
 import Link from "next/link";
+import { allPosts } from "contentlayer/generated";
 import { ThemeSwitcher } from "../theme-switcher";
+import { cn } from "@/lib/utils";
 
 function Navbar() {
+  const linkContainerClassnames = cn("flex gap-4");
+  const hasBlogPosts = allPosts.length > 0;
+
   return (
     <nav className="fixed z-50 w-full overflow-hidden bg-white/90 py-4 text-neutral-600">
       <div className="mx-auto flex items-center justify-between px-6 md:max-w-3xl">
         <h1 className="font-bold">
           <Link href="/">João Alberto</Link>
         </h1>
-        <ThemeSwitcher />
+        <div className={linkContainerClassnames}>
+          {hasBlogPosts ? <Link href="/blog">Blog</Link> : null}
+          <ThemeSwitcher />
+        </div>
       </div>
     </nav>
   );

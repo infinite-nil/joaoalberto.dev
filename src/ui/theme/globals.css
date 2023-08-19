@@ -23,14 +23,6 @@ body.sky {
   --work-card-dot: theme(colors.sky.200);
 }
 
-body.sky {
-  --container-bg: theme(colors.sky.50);
-  --link-text-hover: theme(colors.sky.300);
-  --link-decoration: theme(colors.sky.200);
-  --project-card-border-hover: theme(colors.sky.400);
-  --work-card-dot: theme(colors.sky.200);
-}
-
 body.lime {
   --container-bg: theme(colors.lime.50);
   --link-text-hover: theme(colors.lime.300);
