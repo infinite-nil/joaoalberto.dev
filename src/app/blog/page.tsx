@@ -18,7 +18,7 @@ function Blog() {
           const date = format(parseISO(post.date), "LLLL d, yyyy");
 
           return (
-            <Link href={post.url} className="relative block">
+            <Link key={post._id} href={post.url} className="relative block">
               <div className="p-4">
                 <Text className="mb-2 font-bold">{post.title}</Text>
                 <p className="flex items-center text-xs font-semibold text-neutral-400">
