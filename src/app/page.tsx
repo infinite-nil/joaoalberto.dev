@@ -11,8 +11,6 @@ export default function Home() {
   const projects = getProfileData("projects");
   const work = getProfileData("experience");
 
-  console.log(allPosts);
-
   return (
     <>
       <Container containerStyles="bg-[var(--container-bg)] py-16">
