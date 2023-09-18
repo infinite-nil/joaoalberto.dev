@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Footer } from "@/ui/components/footer";
 import { Navbar } from "@/ui/components/navbar";
 import "@/ui/theme/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { cookies } from "next/headers";
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: Props) {
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
