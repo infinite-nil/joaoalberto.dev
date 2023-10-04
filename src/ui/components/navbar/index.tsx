@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { allPosts } from "contentlayer/generated";
-import { ThemeSwitcher } from "../theme-switcher";
 import { cn } from "@/lib/utils";
+import { allPosts } from "contentlayer/generated";
+import Link from "next/link";
 
 function Navbar() {
   const linkContainerClassnames = cn("flex gap-4");
@@ -15,6 +14,9 @@ function Navbar() {
           <Link href="/">João Alberto</Link>
         </h1>
         <div className={linkContainerClassnames}>
+          <Link className="relative mr-4 font-bold" href="/craft">
+            Craft
+          </Link>
           {hasBlogPosts ? (
             <Link className="relative mr-4 font-bold" href="/blog">
               <span className="relative z-10">Blog</span>
@@ -23,7 +25,6 @@ function Navbar() {
               </small>
             </Link>
           ) : null}
-          <ThemeSwitcher />
         </div>
       </div>
     </nav>

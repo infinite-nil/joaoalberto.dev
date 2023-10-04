@@ -7,46 +7,6 @@ body {
   overflow-y: auto;
 }
 
-body.amber {
-  --container-bg: theme(colors.amber.50);
-  --link-text-hover: theme(colors.amber.300);
-  --link-decoration: theme(colors.amber.200);
-  --project-card-border-hover: theme(colors.amber.400);
-  --work-card-dot: theme(colors.amber.200);
-}
-
-body.sky {
-  --container-bg: theme(colors.sky.50);
-  --link-text-hover: theme(colors.sky.300);
-  --link-decoration: theme(colors.sky.200);
-  --project-card-border-hover: theme(colors.sky.400);
-  --work-card-dot: theme(colors.sky.200);
-}
-
-body.lime {
-  --container-bg: theme(colors.lime.50);
-  --link-text-hover: theme(colors.lime.300);
-  --link-decoration: theme(colors.lime.200);
-  --project-card-border-hover: theme(colors.lime.400);
-  --work-card-dot: theme(colors.lime.200);
-}
-
-body.emerald {
-  --container-bg: theme(colors.emerald.50);
-  --link-text-hover: theme(colors.emerald.300);
-  --link-decoration: theme(colors.emerald.200);
-  --project-card-border-hover: theme(colors.emerald.400);
-  --work-card-dot: theme(colors.emerald.200);
-}
-
-body.rose {
-  --container-bg: theme(colors.rose.50);
-  --link-text-hover: theme(colors.rose.300);
-  --link-decoration: theme(colors.rose.200);
-  --project-card-border-hover: theme(colors.rose.400);
-  --work-card-dot: theme(colors.rose.200);
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
