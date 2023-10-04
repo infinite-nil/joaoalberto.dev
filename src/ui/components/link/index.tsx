@@ -12,8 +12,8 @@ type Props = PropsWithChildren<
 
 function Link({ children, className, external, decorated, ...props }: Props) {
   const classes = twMerge([
-    "font-bold hover:text-[var(--link-text-hover)] decoration-[var(--link-decoration)] decoration-4 underline-offset-2",
-    decorated ? "underline decoration-wavy" : "",
+    "font-bold hover:text-[var(--link-text-hover)] decoration-[var(--link-decoration)] decoration-2 underline-offset-2",
+    decorated ? "underline" : "",
     className,
   ]);
 
