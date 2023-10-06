@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <Container containerStyles="py-16">
+      <Container containerStyles="py-16" contentStyles="text-balance">
         <Text big>
           I am a self-taught software engineer with over{" "}
           <Link external decorated href="https://www.linkedin.com/in/joao-amo/">

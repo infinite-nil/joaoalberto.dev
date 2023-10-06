@@ -79,3 +79,27 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.backdrop {
+  --extended-by: 100px;
+  --cutoff: calc(100% - var(--extended-by));
+  --blur: 15px;
+
+  position: absolute;
+  inset: 0;
+  bottom: calc(-1 * var(--extended-by));
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0,
+    black var(--cutoff),
+    transparent var(--cutoff)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0,
+    black var(--cutoff),
+    transparent var(--cutoff)
+  );
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
+}
