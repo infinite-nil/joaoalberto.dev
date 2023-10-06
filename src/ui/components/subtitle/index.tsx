@@ -7,10 +7,7 @@ type Props = {
 };
 
 function Subtitle({ children, className }: Props) {
-  const classes = cn([
-    "mb-4 text-sm font-bold uppercase text-neutral-400",
-    className,
-  ]);
+  const classes = cn(["mb-4 text-sm font-bold text-neutral-400", className]);
 
   return <h3 className={classes}>{children}</h3>;
 }

@@ -1,4 +1,3 @@
-import { allPosts } from ".contentlayer/generated";
 import { getProfileData } from "@/data/getProfileData";
 import { Container } from "@/ui/components/container";
 import { Link } from "@/ui/components/link";
@@ -13,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <Container containerStyles="bg-[var(--container-bg)] py-16">
+      <Container containerStyles="py-16">
         <Text big>
           I am a self-taught software engineer with over{" "}
           <Link external decorated href="https://www.linkedin.com/in/joao-amo/">

@@ -9,7 +9,7 @@ type Props = {
 
 function Container({ children, containerStyles, contentStyles }: Props) {
   const containerClasses = twMerge(["mt-16", containerStyles]);
-  const contentClasses = twMerge(["mx-auto p-6 md:max-w-3xl", contentStyles]);
+  const contentClasses = twMerge(["mx-auto px-6 md:max-w-3xl", contentStyles]);
 
   return (
     <div className={containerClasses}>

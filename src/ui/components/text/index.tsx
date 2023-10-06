@@ -12,11 +12,12 @@ function Text({ children, className, small = false, big = false }: Props) {
   const classes = twMerge([
     "mb-[1.8rem] max-w-[36ch] text-xl font-semibold text-neutral-700",
     small && "text-base",
-    big && "text-3xl",
+    big && "text-2xl",
     big && "font-bold",
-    big && "leading-snug",
+    big && "leading-tight",
     className,
   ]);
+
   return <p className={classes}>{children}</p>;
 }
 
