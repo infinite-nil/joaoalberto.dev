@@ -15,9 +15,6 @@ function Navbar() {
           <Link href="/">João Alberto</Link>
         </h1>
         <div className={linkContainerClassnames}>
-          <Link className="relative mr-4 font-bold" href="/craft">
-            Craft
-          </Link>
           {hasBlogPosts ? (
             <Link className="relative mr-4 font-bold" href="/blog">
               <span className="relative z-10">Blog</span>
