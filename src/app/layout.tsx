@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Footer } from "@/ui/components/footer";
-import { Navbar } from "@/ui/components/navbar";
 import "@/ui/theme/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
@@ -8,7 +7,7 @@ import { Manrope } from "next/font/google";
 import { cookies } from "next/headers";
 import { ReactNode } from "react";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"], weight: ["300", "600"] });
 
 export const metadata: Metadata = {
   title: "João Alberto - Software developer",
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={classes}>
-        <Navbar />
         {children}
         <Footer />
         <Analytics />
