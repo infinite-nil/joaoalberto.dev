@@ -47,4 +47,4 @@ for (let file of files) {
   fs.writeFileSync(path.join("./", "build", file.name), new_file);
 }
 
-$`cp ./inde.html ./build`;
+$`cp ./index.html ./build`;
