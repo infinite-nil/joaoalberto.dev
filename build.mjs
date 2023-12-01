@@ -48,3 +48,4 @@ for (let file of files) {
 }
 
 $`cp ./index.html ./build`;
+$`cp -R ./assets ./build`;
