@@ -3,12 +3,19 @@
 import "zx/globals";
 
 const blog_content = fs.readdirSync(path.join("./blog/"));
+let index = fs.readFileSync("./index.html").toString("utf-8");
 const files = blog_content.map((file) => ({
   name: file,
   content: fs.readFileSync(path.join("./", "blog", file)).toString("utf-8"),
 }));
 
-for (let file of files) {
+let links = [];
+
+for (let i = 0; i < files.length; i++) {
+  const file = files[i];
+
+  links.push([file.name]);
+
   let blog_layout = fs
     .readFileSync(path.join("./", "layout", "blog.html"))
     .toString("utf-8");
@@ -30,6 +37,7 @@ for (let file of files) {
       switch (n) {
         case "title":
           regex = /<!--title-->/gi;
+          links[i].push(v.trim());
           break;
         case "description":
           regex = /<!--description-->/gi;
@@ -46,6 +54,11 @@ for (let file of files) {
   fs.ensureDirSync(path.join("./", "build"));
   fs.writeFileSync(path.join("./", "build", file.name), new_file);
 }
+
+links = links.map((link) => `<li><a href="/${link[0]}">${link[1]}</a></li>`);
+index = index.replace(/<!--blog-links-->/, links.join("\n"));
+
+fs.writeFileSync("./index.html", index);
 
 $`cp ./index.html ./build`;
 $`cp -R ./assets ./build`;

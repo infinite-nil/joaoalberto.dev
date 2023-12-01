@@ -18,6 +18,13 @@ body {
   width: 100%;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    color: #efefef;
+    background-color: #343434;
+  }
+}
+
 .links {
   display: flex;
   gap: 8px;
@@ -31,9 +38,9 @@ body {
   text-decoration: none;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    color: #efefef;
-    background-color: #343434;
-  }
+.home-blog-list {
+  margin-top: 48px;
+  max-width: 100%;
+  padding: 16px;
+  width: 600px;
 }
