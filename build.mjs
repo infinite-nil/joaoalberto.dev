@@ -46,3 +46,5 @@ for (let file of files) {
   fs.ensureDirSync(path.join("./", "build"));
   fs.writeFileSync(path.join("./", "build", file.name), new_file);
 }
+
+$`cp ./inde.html ./build`;
