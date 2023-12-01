@@ -1,0 +1,15 @@
+{
+  "name": "joaoalberto.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "zx ./build.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zx": "^7.2.3"
+  }
+}
