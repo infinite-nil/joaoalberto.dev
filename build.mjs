@@ -63,12 +63,16 @@ function build() {
     $`cp -R ./assets ./build`;
 }
 
-fs.watch('.', {recursive: true}, (_, file) => {
-    console.log('File changed, rebuild');
+if (process.argv.find(v => v === '--dev')) {
+    fs.watch('.', {recursive: true}, (_, file) => {
+        console.log('File changed, rebuild');
 
-    if (!file.includes('build/')) {
-        build()
-    }
-})
+        if (!file.includes('build/')) {
+            build()
+        }
+    })
 
-$`http-server build`
+    $`http-server build`
+} else {
+    build();
+}

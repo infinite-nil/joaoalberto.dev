@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "zx ./build.mjs --dev",
     "build": "zx ./build.mjs"
   },
   "author": "",
