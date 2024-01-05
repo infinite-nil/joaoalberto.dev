@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function Projects({ repositories }: Props) {
-  if (repositories.length <= 0) return navigator;
+  if (repositories.length <= 0) return null;
 
   return (
     <div className="mt-12 w-full">
