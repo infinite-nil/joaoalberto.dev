@@ -12,6 +12,7 @@ export default function Project({ repository }: Props) {
       key={repository.html_url}
     >
       <a
+        aria-label={`${repository.name}: ${repository.description}`}
         target="_blank"
         className="border border-transparent p-8 flex justify-stretch md:p-2 md:flex-col md:items-end md:justify-between md:gap-2 h-full group-hover:border-blue-950"
         href={repository.html_url}
