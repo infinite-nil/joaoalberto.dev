@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { AppProps } from "next/app";
 import { Inter, Syne } from "next/font/google";
 import React from 'react';
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <main className={`max-w-[68ch] mx-auto ${syne.variable} ${inter.variable} font-text`}>
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights />
     </main>
   );
 }
