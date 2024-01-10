@@ -8,7 +8,7 @@ type Props = {
 export default function Project({ repository }: Props) {
   return (
     <li
-      className="border-t-2 last:border-b-2 md:border md:flex-1 md:min-w-[calc(33%-4px)] md:max-w-[calc(33%-4px)] md:last:border md:h-[170px] hover:border-blue-950 group"
+      className="bg-white border-t-2 last:border-b-2 md:border md:flex-1 md:min-w-[calc(33%-4px)] md:max-w-[calc(33%-4px)] md:last:border md:h-[170px] hover:border-blue-950 group"
       key={repository.html_url}
     >
       <a
