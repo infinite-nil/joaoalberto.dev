@@ -3,7 +3,7 @@ import { Repository } from "./types";
 
 const client = axios.create({
   baseURL: "https://api.joaoalberto.dev",
-  timeout: 500
+  timeout: 1000
 });
 
 export async function fetchRepositories(): Promise<Repository[]> {
