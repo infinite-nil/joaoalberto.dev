@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     require.resolve("@vercel/style-guide/eslint/browser"),
     require.resolve("@vercel/style-guide/eslint/react"),
+    require.resolve("@vercel/style-guide/eslint/node"),
     require.resolve("@vercel/style-guide/eslint/next"),
   ],
   parserOptions: {
@@ -21,4 +22,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ["./src/**/_*.tsx", "./src/**/*.page.tsx"],
+      rules: {
+        "import/no-default-export": "off",
+      },
+    },
+  ],
 };
