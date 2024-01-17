@@ -1,4 +1,4 @@
-import Automata from "@/components/automata/automata";
+import { Automata } from "@/components/automata/automata";
 import Projects from "@/components/projects/projects";
 import Social from "@/components/social/social";
 import Title from "@/components/title/title";
