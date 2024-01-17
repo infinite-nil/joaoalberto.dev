@@ -1,5 +1,5 @@
 import { Repository } from "@/services/api/types";
-import Subtitle from "../subtitle/subtitle";
+import { Subtitle } from "../subtitle/subtitle";
 import { Project } from "./project";
 
 type Props = {

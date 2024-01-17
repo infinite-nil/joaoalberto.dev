@@ -1,7 +1,7 @@
 import { Automata } from "@/components/automata/automata";
 import { Projects } from "@/components/projects/projects";
 import { Social } from "@/components/social/social";
-import Title from "@/components/title/title";
+import { Title } from "@/components/title/title";
 import { fetchRepositories } from "@/services/api";
 import { Repository } from "@/services/api/types";
 import Head from "next/head";
