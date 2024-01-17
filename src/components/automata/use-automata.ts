@@ -20,13 +20,13 @@ function automata(context: CanvasRenderingContext2D) {
   const height = width;
 
   function calculateState(a: any, b: any, c: any) {
-    let neighborhood = [a, b, c].join("");
-    let value = 7 - parseInt(neighborhood, 2);
+    const neighborhood = [a, b, c].join("");
+    const value = 7 - parseInt(neighborhood, 2);
 
     return parseInt(ruleSet[value]);
   }
 
-  let state: Array<Array<number>> = Array.from(
+  const state: Array<Array<number>> = Array.from(
     { length: total },
     (_, rowIndex) =>
       Array.from({ length: total }, (_, colIndex) =>
@@ -50,18 +50,22 @@ function automata(context: CanvasRenderingContext2D) {
     }
   }
 
-  state.map((row, ri) => {
-    row.map((col, ci) => {
+  for (const ri in state) {
+    const row = state[ri];
+
+    for (const ci in row) {
+      const col = row[ci];
+
       context.fillStyle = col === 0 ? "#ffffff" : "#f8f8f8";
       context.beginPath();
-      context.rect(width * ci, height * ri, width, height);
+      context.rect(width * Number(ci), height * Number(ri), width, height);
       context.fill();
       context.closePath();
-    });
-  });
+    }
+  }
 }
 
-export default function useAutomata() {
+function useAutomata() {
   const canvas = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -80,3 +84,5 @@ export default function useAutomata() {
 
   return canvas;
 }
+
+export { useAutomata };

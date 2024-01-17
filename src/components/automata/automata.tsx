@@ -1,4 +1,4 @@
-import useAutomata from "./use-automata";
+import { useAutomata } from "./use-automata";
 
 function Automata() {
   const canvas = useAutomata();
