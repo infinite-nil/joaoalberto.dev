@@ -2,9 +2,9 @@ import { Repository } from "@/services/api/types";
 import { Subtitle } from "../subtitle/subtitle";
 import { Project } from "./project";
 
-type Props = {
+type Props = Readonly<{
   repositories: Repository[];
-};
+}>;
 
 function Projects({ repositories }: Props) {
   if (repositories.length <= 0) return null;

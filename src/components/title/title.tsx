@@ -1,6 +1,6 @@
-type Props = {
+type Props = Readonly<{
   children: string;
-};
+}>;
 
 function Title({ children }: Props) {
   return (

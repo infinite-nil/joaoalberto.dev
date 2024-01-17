@@ -6,9 +6,9 @@ import { Title } from "@/components/title/title";
 import { fetchRepositories } from "@/services/api";
 import { Repository } from "@/services/api/types";
 
-type Props = {
+type Props = Readonly<{
   repositories: Repository[];
-};
+}>;
 
 export default function Home({ repositories }: Props) {
   return (

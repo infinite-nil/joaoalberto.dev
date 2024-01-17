@@ -1,9 +1,9 @@
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Repository } from "@/services/api/types";
 
-type Props = {
+type Props = Readonly<{
   repository: Repository;
-};
+}>;
 
 function Project({ repository }: Props) {
   return (
