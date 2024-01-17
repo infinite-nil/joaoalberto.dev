@@ -6,7 +6,7 @@ type Props = {
   repositories: Repository[];
 };
 
-export default function Projects({ repositories }: Props) {
+function Projects({ repositories }: Props) {
   if (repositories.length <= 0) return null;
 
   return (
@@ -20,3 +20,5 @@ export default function Projects({ repositories }: Props) {
     </div>
   );
 }
+
+export { Projects };

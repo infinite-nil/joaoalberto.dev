@@ -1,5 +1,5 @@
 import { Automata } from "@/components/automata/automata";
-import Projects from "@/components/projects/projects";
+import { Projects } from "@/components/projects/projects";
 import Social from "@/components/social/social";
 import Title from "@/components/title/title";
 import { fetchRepositories } from "@/services/api";
