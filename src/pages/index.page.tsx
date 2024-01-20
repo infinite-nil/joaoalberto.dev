@@ -26,7 +26,7 @@ export default function Home({ repositories }: Props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const repositories = await fetchRepositories();
 
   return {
