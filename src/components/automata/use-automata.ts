@@ -15,9 +15,9 @@ function getRandomRule() {
 function automata(context: CanvasRenderingContext2D) {
   const rule = getRandomRule();
   const ruleSet = rule.toString(2).padStart(8, "0");
-  const total = 80;
+  const total = 100;
   const width = window.innerWidth / total;
-  const height = width;
+  const height = window.innerHeight / total;
 
   function calculateState(a: any, b: any, c: any) {
     const neighborhood = [a, b, c].join("");
